@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Comun\**" />
+    <Compile Remove="Utils\**" />
+    <EmbeddedResource Remove="Comun\**" />
+    <EmbeddedResource Remove="Utils\**" />
+    <None Remove="Comun\**" />
+    <None Remove="Utils\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BP.API.Entidades" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+trigger:
+- '*'
+
+variables:
+  buildConfiguration: 'Release'
+  isDevelopBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
+  isReleaseBranch: $[startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')]
+  testWorkingDirectory: 'WSMovimientos.Test'
+  testProjectFilePath: 'WSMovimientos.Test/WSMovimientos.Test.csproj'
+  sonarProjectKey: 'ws-wsmovimientos-netcore'
+  project: 'WSMovimientos.API'
+  repositoryImageName: 'bp/productos/ws-wsmovimientos-netcore'
+  openshiftImageStream: WSMovimientos
+  openshiftNamespace: productos
+  
+resources:
+ repositories:
+   - repository: NetcoreTemplate
+     type: git
+     name: BP-DevOps-Infrastructure/common-pipeline-template-oc
+     ref: refs/heads/masterv2
+
+extends:
+  template: netcore/init.yml@NetcoreTemplate
+  parameters:
+    netCoreVersion: '6.0.201'
+    coverletVersion: '3.1.2'

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="RepositorioTest\**" />
+    <Compile Remove="Utilitarios\**" />
+    <EmbeddedResource Remove="RepositorioTest\**" />
+    <EmbeddedResource Remove="Utilitarios\**" />
+    <None Remove="RepositorioTest\**" />
+    <None Remove="Utilitarios\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.16" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+	  <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageReference Include="coverlet.msbuild" Version="3.2.0" />
+    <PackageReference Include="coverlet.collector" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WSMovimientos.Dominio\WSMovimientos.Dominio.csproj" />
+    <ProjectReference Include="..\WSMovimientos.Entidades\WSMovimientos.Entidades.csproj" />
+    <ProjectReference Include="..\WSMovimientos.Infraestructura\WSMovimientos.Infraestructura.csproj" />
+    <ProjectReference Include="..\WSMovimientos.Repositorio\WSMovimientos.Repositorio.csproj" />
+  </ItemGroup>
+
+</Project>

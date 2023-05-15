@@ -1,0 +1,1027 @@
+{
+	"info": {
+		"_postman_id": "bc5fa44b-a664-4af4-a69f-60b11c33202b",
+		"name": "WSMovimientos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11466189"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Consulta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"idCliente\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cliente/consulta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"idPersona\": 1,\r\n      \"contrasenia\": \"Prueba12345\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cliente/crear",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"crear"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Jose Lema",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"idPersona\": 1,\r\n      \"contrasenia\": \"1234\"\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cliente/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cliente",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Marianela Montalvo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"idPersona\": 1,\r\n      \"contrasenia\": \"5678\"\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cliente/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cliente",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Juan Osorio",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"idPersona\": 1,\r\n      \"contrasenia\": \"1245\"\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cliente/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cliente",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Actualiza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"idCliente\": 3,\r\n      \"contrasenia\": \"Actualiza12345\",\r\n      \"estado\": true\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cliente/actualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cliente\": {\r\n      \"id\": 3\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cliente/eliminar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"item": [
+				{
+					"name": "Consulta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"idCuenta\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cuenta/consulta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cuenta",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 1,\r\n      \"numeroCuenta\": 124324,\r\n      \"tipoCuenta\": \"AHO\",\r\n      \"saldoInicial\": 200\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cuenta",
+								"crear"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Jose Lema",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 1,\r\n      \"numeroCuenta\": 478758,\r\n      \"tipoCuenta\": \"AHO\",\r\n      \"saldoInicial\": 2000\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cuenta",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Jose Lema 2",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 1,\r\n      \"numeroCuenta\": 585545,\r\n      \"tipoCuenta\": \"COR\",\r\n      \"saldoInicial\": 1000\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cuenta",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Marianela Montalvo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 2,\r\n      \"numeroCuenta\": 225487,\r\n      \"tipoCuenta\": \"COR\",\r\n      \"saldoInicial\": 100\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cuenta",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Marianela Montalvo 2",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 2,\r\n      \"numeroCuenta\": \"496825\",\r\n      \"tipoCuenta\": \"AHO\",\r\n      \"saldoInicial\": 540\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cuenta",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Juan Osorio",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idPersona\": 3,\r\n      \"numeroCuenta\": 495878,\r\n      \"tipoCuenta\": \"AHO\",\r\n      \"saldoInicial\": 0\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Cuenta/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Cuenta",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Actualiza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"idCuenta\": 2,\r\n      \"estado\": false\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cuenta/actualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cuenta",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"cuenta\": {\r\n      \"id\": 2\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Cuenta/eliminar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Cuenta",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimiento",
+			"item": [
+				{
+					"name": "Consulta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"idCuenta\": 1/**/,\r\n    \"fechaInicio\": \"2023-05-14\",\r\n    \"fechaFin\": \"2023-05-14\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Movimiento/consulta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Movimiento",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"idCuenta\": 1,\r\n      \"tipo\": \"RET\",\r\n      \"valor\": 290.00\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Movimiento/crear",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Movimiento",
+								"crear"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"idCuenta\": 1,\r\n      \"tipo\": \"RET\",\r\n      \"valor\": 575\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Movimiento/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Movimiento",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "2",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"idCuenta\": 2,\r\n      \"tipo\": \"DEP\",\r\n      \"valor\": 600\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Movimiento/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Movimiento",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "3",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"idCuenta\": 3,\r\n      \"tipo\": \"DEP\",\r\n      \"valor\": 150\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Movimiento/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Movimiento",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "4",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"idCuenta\": 4,\r\n      \"tipo\": \"RET\",\r\n      \"valor\": 540\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Movimiento/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Movimiento",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Actualiza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"id\": 2,\r\n      \"tipo\": \"RET\",\r\n      \"saldo\": 99\r\n    }\r\n  }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Movimiento/actualizar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Movimiento",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"movimiento\": {\r\n      \"id\": 18\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Movimiento/eliminar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Movimiento",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Consulta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"identificacion\": \"1718342585\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Persona/consulta",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Persona",
+								"consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"persona\": {\r\n      \"nombre\": \"Danilo\",\r\n      \"genero\": \"H\",\r\n      \"edad\": 30,\r\n      \"identificacion\": \"1718342585\",\r\n      \"direccion\": \"Monjas\",\r\n      \"telefono\": 98254785\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7227/api/v1/Persona/crear",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7227",
+							"path": [
+								"api",
+								"v1",
+								"Persona",
+								"crear"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Jose Lema",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"persona\": {\r\n      \"nombre\": \"Jose Lema\",\r\n      \"genero\": \"H\",\r\n      \"edad\": 30,\r\n      \"identificacion\": \"1718333331\",\r\n      \"direccion\": \"Otavalo sn y principal\",\r\n      \"telefono\": 98254785\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Persona/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Persona",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Marianela Montalvo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"persona\": {\r\n      \"nombre\": \"Marianela Montalvo\",\r\n      \"genero\": \"H\",\r\n      \"edad\": 30,\r\n      \"identificacion\": \"1718333332\",\r\n      \"direccion\": \"Amazonas y NNUU\",\r\n      \"telefono\": 97548965\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Persona/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Persona",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Juan Osorio",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"persona\": {\r\n      \"nombre\": \"Juan Osorio\",\r\n      \"genero\": \"H\",\r\n      \"edad\": 30,\r\n      \"identificacion\": \"1718333333\",\r\n      \"direccion\": \"13 junio y Equinoccial\",\r\n      \"telefono\": 98874587\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7227/api/v1/Persona/crear",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7227",
+									"path": [
+										"api",
+										"v1",
+										"Persona",
+										"crear"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ConsultaMovimientos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"identificacion\": \"1718333332\",\r\n    \"fechaInicio\": \"2023-05-14\",\r\n    \"fechaFin\": \"2023-05-15\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7227/api/v1/Movimiento/consulta.movimientos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7227",
+					"path": [
+						"api",
+						"v1",
+						"Movimiento",
+						"consulta.movimientos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

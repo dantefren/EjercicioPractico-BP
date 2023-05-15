@@ -1,0 +1,3 @@
+Scaffold-DbContext "Server=DANILO-LAPTOP;Database=BDD_MOVIMIENTOS;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+Scaffold-DbContext "Server=MydataBase.database.windows.net;Database=dev-base;Integrated security=true;Authentication=Active Directory Integratd;User ID=myUser;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
