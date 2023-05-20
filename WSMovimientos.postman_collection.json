@@ -10,7 +10,7 @@
 			"name": "Cliente",
 			"item": [
 				{
-					"name": "Consulta",
+					"name": "Consultar",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -27,7 +27,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7227/api/v1/Cliente/consulta",
+							"raw": "https://localhost:7227/api/v1/Cliente/consultar",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -37,14 +37,14 @@
 								"api",
 								"v1",
 								"Cliente",
-								"consulta"
+								"consultar"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Crea",
+					"name": "Crear",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -178,7 +178,7 @@
 					]
 				},
 				{
-					"name": "Actualiza",
+					"name": "Actualizar",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -209,7 +209,7 @@
 					"response": []
 				},
 				{
-					"name": "Elimina",
+					"name": "Eliminar",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -245,7 +245,7 @@
 			"name": "Cuenta",
 			"item": [
 				{
-					"name": "Consulta",
+					"name": "Consultar",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -262,7 +262,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7227/api/v1/Cuenta/consulta",
+							"raw": "https://localhost:7227/api/v1/Cuenta/consultar",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -272,14 +272,14 @@
 								"api",
 								"v1",
 								"Cuenta",
-								"consulta"
+								"consultar"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Crea",
+					"name": "Crear",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -481,7 +481,7 @@
 					]
 				},
 				{
-					"name": "Actualiza",
+					"name": "Actualizar",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -512,7 +512,7 @@
 					"response": []
 				},
 				{
-					"name": "Elimina",
+					"name": "Eliminar",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -548,7 +548,7 @@
 			"name": "Movimiento",
 			"item": [
 				{
-					"name": "Consulta",
+					"name": "Consultar",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -557,7 +557,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"idCuenta\": 1/**/,\r\n    \"fechaInicio\": \"2023-05-14\",\r\n    \"fechaFin\": \"2023-05-14\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"headerIn\": {\r\n    \"dispositivo\": \"string\",\r\n    \"empresa\": \"string\",\r\n    \"canal\": \"string\",\r\n    \"medio\": \"string\",\r\n    \"aplicacion\": \"string\",\r\n    \"agencia\": \"string\",\r\n    \"tipoTransaccion\": \"string\",\r\n    \"geolocalizacion\": \"string\",\r\n    \"usuario\": \"string\",\r\n    \"unicidad\": \"string\",\r\n    \"guid\": \"string\",\r\n    \"fechaHora\": \"string\",\r\n    \"filler\": \"string\",\r\n    \"idioma\": \"string\",\r\n    \"sesion\": \"string\",\r\n    \"ip\": \"string\",\r\n    \"requestIp\": \"string\",\r\n    \"idCliente\": \"string\",\r\n    \"tipoIdCliente\": \"string\",\r\n    \"bancs\": {\r\n      \"teller\": \"string\",\r\n      \"terminal\": \"string\",\r\n      \"institucion\": \"string\",\r\n      \"agencia\": \"string\",\r\n      \"estacion\": \"string\",\r\n      \"aplicacion\": \"string\",\r\n      \"canal\": \"string\"\r\n    },\r\n    \"documento\": {\r\n      \"fechaContable\": \"string\",\r\n      \"numeroDocumento\": \"string\",\r\n      \"journals\": {\r\n        \"journal\": [\r\n          {\r\n            \"valor\": \"string\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"bodyIn\": {\r\n    \"idCuenta\": 1/**/,\r\n    \"fechaInicio\": \"2023-05-13\",\r\n    \"fechaFin\": \"2023-05-15\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -565,7 +565,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7227/api/v1/Movimiento/consulta",
+							"raw": "https://localhost:7227/api/v1/Movimiento/consultar",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -575,14 +575,14 @@
 								"api",
 								"v1",
 								"Movimiento",
-								"consulta"
+								"consultar"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Crea",
+					"name": "Crear",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -750,7 +750,7 @@
 					]
 				},
 				{
-					"name": "Actualiza",
+					"name": "Actualizar",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -781,7 +781,7 @@
 					"response": []
 				},
 				{
-					"name": "Elimina",
+					"name": "Eliminar",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -817,7 +817,7 @@
 			"name": "Personas",
 			"item": [
 				{
-					"name": "Consulta",
+					"name": "Consultar",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -834,7 +834,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7227/api/v1/Persona/consulta",
+							"raw": "https://localhost:7227/api/v1/Persona/consultar",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -844,14 +844,14 @@
 								"api",
 								"v1",
 								"Persona",
-								"consulta"
+								"consultar"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Crea",
+					"name": "Crear",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -990,7 +990,7 @@
 			]
 		},
 		{
-			"name": "ConsultaMovimientos",
+			"name": "ConsultarMovimientos",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1007,7 +1007,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:7227/api/v1/Movimiento/consulta.movimientos",
+					"raw": "https://localhost:7227/api/v1/Movimiento/consultar.movimientos",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -1017,7 +1017,7 @@
 						"api",
 						"v1",
 						"Movimiento",
-						"consulta.movimientos"
+						"consultar.movimientos"
 					]
 				}
 			},
