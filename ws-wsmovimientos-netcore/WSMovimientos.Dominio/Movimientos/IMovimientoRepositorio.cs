@@ -9,13 +9,13 @@ namespace WSMovimientos.Dominio.Movimientos
 {
     public interface IMovimientoRepositorio
     {
-        Task<List<MovimientoConsulta>> Consulta(EntradaConsultaMovimiento entradaConsultaMovimiento);
-        Task<MovimientoConsulta> ConsultaUltimaTransaccion(EntradaConsultaMovimiento entradaConsultaMovimiento);
-        Task<List<MovimientoCuentaConsulta>> ConsultaMovimientosCuenta(EntradaConsultaMovimientoCuenta entradaConsultaMovimiento);
+        Task<List<EMovimientoConsulta>> Consultar(EEntradaConsultaMovimiento entradaConsultaMovimiento);
+        Task<EMovimientoConsulta> ConsultarUltimaTransaccion(EEntradaConsultaMovimiento entradaConsultaMovimiento);
+        Task<List<EMovimientoCuentaConsulta>> ConsultarMovimientosCuenta(EEntradaConsultaMovimientoCuenta entradaConsultaMovimiento);
 
-        Task<Movimiento> Crea(MovimientoCreaCompleto movimientoCrea);
-        Task<bool> Actualiza(MovimientoActualiza movimientoActualiza);
-        Task<bool> Elimina(MovimientoElimina movimientoElimina);
+        Task<EMovimiento> Crear(EMovimientoCreaCompleto movimientoCrea);
+        Task<bool> Actualizar(EMovimientoActualiza movimientoActualiza);
+        Task<bool> Eliminar(EMovimientoElimina movimientoElimina);
 
     }
 }

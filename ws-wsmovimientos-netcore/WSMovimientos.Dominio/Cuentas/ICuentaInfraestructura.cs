@@ -15,28 +15,28 @@ namespace WSMovimientos.Dominio.Cuentas
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaConsultaCuenta>> Consulta(EEntrada<EntradaConsultaCuenta> entrada);
+        Task<ERespuesta<ESalidaConsultaCuenta>> Consultar(EEntrada<EEntradaConsultaCuenta> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaCreaCuenta>> Crea(EEntrada<EntradaCreaCuenta> entrada);
+        Task<ERespuesta<ESalidaCreaCuenta>> Crear(EEntrada<EEntradaCreaCuenta> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> Actualiza(EEntrada<EntradaActualizaCuenta> entrada);
+        Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaCuenta> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> Elimina(EEntrada<EntradaEliminaCuenta> entrada);
+        Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaCuenta> entrada);
 
     }
 }

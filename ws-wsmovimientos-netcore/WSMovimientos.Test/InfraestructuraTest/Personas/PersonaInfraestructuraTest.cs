@@ -24,7 +24,7 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         /// <summary>
         /// 
         /// </summary>
-        private readonly Mock<IValidator<EEntrada<EntradaConsultaPersona>>> _mockValidatorEntradaConsulta = new Mock<IValidator<EEntrada<EntradaConsultaPersona>>>();
+        private readonly Mock<IValidator<EEntrada<EEntradaConsultaPersona>>> _mockValidatorEntradaConsulta = new Mock<IValidator<EEntrada<EEntradaConsultaPersona>>>();
 
         /// <summary>
         /// 
@@ -39,17 +39,17 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         /// <summary>
         /// 
         /// </summary>
-        private readonly Mock<IValidator<EEntrada<EntradaCreaPersona>>> _mockValidatorEntradaCrea = new Mock<IValidator<EEntrada<EntradaCreaPersona>>>();
+        private readonly Mock<IValidator<EEntrada<EEntradaCreaPersona>>> _mockValidatorEntradaCrea = new Mock<IValidator<EEntrada<EEntradaCreaPersona>>>();
 
         /// <summary>
         /// 
         /// </summary>
-        private readonly Mock<IValidator<EEntrada<EntradaActualizaPersona>>> _mockvalidatorEntradaActualiza = new Mock<IValidator<EEntrada<EntradaActualizaPersona>>>();
+        private readonly Mock<IValidator<EEntrada<EEntradaActualizaPersona>>> _mockvalidatorEntradaActualiza = new Mock<IValidator<EEntrada<EEntradaActualizaPersona>>>();
 
         /// <summary>
         /// 
         /// </summary>
-        private readonly Mock<IValidator<EEntrada<EntradaEliminaPersona>>> _mockvalidatorEntradaElimina = new Mock<IValidator<EEntrada<EntradaEliminaPersona>>>();
+        private readonly Mock<IValidator<EEntrada<EEntradaEliminaPersona>>> _mockvalidatorEntradaElimina = new Mock<IValidator<EEntrada<EEntradaEliminaPersona>>>();
 
         #endregion MOCKS
 
@@ -58,22 +58,22 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         /// <summary>
         /// 
         /// </summary>
-        private EEntrada<EntradaConsultaPersona> entrada = new EEntrada<EntradaConsultaPersona>();
+        private EEntrada<EEntradaConsultaPersona> entrada = new EEntrada<EEntradaConsultaPersona>();
 
         /// <summary>
         /// 
         /// </summary>
-        private List<PersonaConsulta> lstPersona = new List<PersonaConsulta>();
+        private List<EPersonaConsulta> lstPersona = new List<EPersonaConsulta>();
 
         /// <summary>
         /// 
         /// </summary>
-        private PersonaConsulta personaInfo = new PersonaConsulta();
+        private EPersonaConsulta personaInfo = new EPersonaConsulta();
 
         /// <summary>
         /// 
         /// </summary>
-        private PersonaId personaId = new PersonaId();
+        private EPersonaId personaId = new EPersonaId();
 
         /// <summary>
         /// 
@@ -92,10 +92,10 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         public void Setup()
         {
             string strEntrada = "{\"headerIn\":{\"dispositivo\":\"SOFGHyjguVVZrWyOQhxK2R1ULX3d76XrXpBLVwJj\",\"empresa\":\"0010\",\"canal\":\"02\",\"medio\":\"020007\",\"aplicacion\":\"00664\",\"agencia\":\"0162\",\"tipoTransaccion\":\"201021303\",\"geolocalizacion\":\"0.6814,0.1515\",\"usuario\":\"USINTERT\",\"unicidad\":\"mBMVucAHA4auns86xXqgb8eNJECRUqFTRDvvbQAG\",\"guid\":\"52f66830535f92FFdNVGXBK7Xn1FG8KY\",\"fechaHora\":\"202208111710001063\",\"filler\":\"filler\",\"idioma\":\"es-EC\",\"sesion\":\"TCqnfSnMAlVlrJ2A6KKSpbmfoTra917zDuDe6uqe\",\"ip\":\"10.223.15.237\",\"idCliente\":\"0503364242\",\"tipoIdCliente\":\"0001\"},\"bodyIn\":{\"filtro\":0,\"ordenante\":{\"identificacion\":\"1717720872\",\"tipoIdentificacion\":\"0001\"}}}";
-            entrada = JsonConvert.DeserializeObject<EEntrada<EntradaConsultaPersona>>(strEntrada);
+            entrada = JsonConvert.DeserializeObject<EEntrada<EEntradaConsultaPersona>>(strEntrada);
 
 
-            personaInfo = new PersonaConsulta
+            personaInfo = new EPersonaConsulta
             {
                 Identificacion = "17025799728",
                 Edad = 30,
@@ -113,7 +113,7 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
             lstPersona.Add(personaInfo);
 
 
-            personaId = new PersonaId
+            personaId = new EPersonaId
             {
                 Id = 2,
             };
@@ -133,9 +133,9 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         public void ConsultarPorOrdenanteAsyncTest_DadaUnCliente_CuandoNoExistaDatosDelCLiente_RetornaUnaExepcion()
         {
             _mockValidatorEntradaConsulta.Setup(v => v.Validate(entrada)).Returns(new ValidationResult());
-            _mockPersonaRepositorio.Setup(ent => ent.Consulta(entrada.BodyIn)).ReturnsAsync(new List<Entidades.DTOS.PersonaConsulta>());
+            _mockPersonaRepositorio.Setup(ent => ent.Consultar(entrada.BodyIn)).ReturnsAsync(new List<Entidades.DTOS.EPersonaConsulta>());
             _iPersonaInfraestructura = new PersonaInfraestructura(_mockIPropiedadesApi.Object, _mockPersonaRepositorio.Object, _mockValidatorEntradaConsulta.Object, _mockValidatorEntradaCrea.Object, _mockvalidatorEntradaActualiza.Object, _mockvalidatorEntradaElimina.Object);
-            Assert.ThrowsAsync<CoreNegocioError>(() => _iPersonaInfraestructura.Consulta(entrada));
+            Assert.ThrowsAsync<CoreNegocioError>(() => _iPersonaInfraestructura.Consultar(entrada));
         }
 
         /// <summary>
@@ -145,9 +145,9 @@ namespace WSMovimientos.Test.InfraestructuraTest.Personas
         public void ConsultarPorOrdenanteAsyncTest_DadaUnaSolicitudDeContatosConFiltroDeEstado_CuandoExistanRegistrosEnElRepositorio_RetornaDatosDelCliente()
         {
             _mockValidatorEntradaConsulta.Setup(v => v.Validate(entrada)).Returns(new ValidationResult());
-            _mockPersonaRepositorio.Setup(ent => ent.Consulta(entrada.BodyIn)).ReturnsAsync(lstPersona);
+            _mockPersonaRepositorio.Setup(ent => ent.Consultar(entrada.BodyIn)).ReturnsAsync(lstPersona);
             _iPersonaInfraestructura = new PersonaInfraestructura(_mockIPropiedadesApi.Object, _mockPersonaRepositorio.Object, _mockValidatorEntradaConsulta.Object, _mockValidatorEntradaCrea.Object, _mockvalidatorEntradaActualiza.Object, _mockvalidatorEntradaElimina.Object);
-            Assert.DoesNotThrowAsync(() => _iPersonaInfraestructura.Consulta(entrada));
+            Assert.DoesNotThrowAsync(() => _iPersonaInfraestructura.Consultar(entrada));
         }
         #endregion
 

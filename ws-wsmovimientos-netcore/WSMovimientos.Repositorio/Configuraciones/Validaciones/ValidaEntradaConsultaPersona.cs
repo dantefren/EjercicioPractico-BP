@@ -13,7 +13,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
     /// <summary>
     /// 
     /// </summary>
-    public class ValidaEntradaConsultaPersona : AbstractValidator<EEntrada<Entidades.DTOS.Entrada.EntradaConsultaPersona>>
+    public class ValidaEntradaConsultaPersona : AbstractValidator<EEntrada<Entidades.DTOS.Entrada.EEntradaConsultaPersona>>
     {
         /// <summary>
         /// 

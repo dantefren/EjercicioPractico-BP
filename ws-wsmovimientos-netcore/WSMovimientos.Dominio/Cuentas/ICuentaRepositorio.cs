@@ -9,10 +9,10 @@ namespace WSMovimientos.Dominio.Cuentas
 {
     public interface ICuentaRepositorio
     {
-        Task<List<CuentaConsulta>> Consulta(EntradaConsultaCuenta entradaConsultaCuenta);
-        Task<CuentaId> Crea(CuentaCrea cuentaCrea);
-        Task<bool> Actualiza(CuentaActualiza cuentaActualiza);
-        Task<bool> Elimina(CuentaElimina cuentaElimina);
+        Task<List<ECuentaConsulta>> Consultar(EEntradaConsultaCuenta entradaConsultaCuenta);
+        Task<ECuentaId> Crear(ECuentaCrea cuentaCrea);
+        Task<bool> Actualizar(ECuentaActualiza cuentaActualiza);
+        Task<bool> Eliminar(ECuentaElimina cuentaElimina);
 
     }
 }

@@ -9,10 +9,10 @@ namespace WSMovimientos.Dominio.Personas
 {
     public interface IPersonaRepositorio
     {
-        Task<List<PersonaConsulta>> Consulta(EntradaConsultaPersona entradaConsultaPersona);
-        Task<PersonaId> CrearAsync(PersonaCrea personaCrea);
-        Task<bool> ActualizarAsync(PersonaActualiza personaActualiza);
-        Task<bool> EliminarAsync(PersonaElimina personaElimina);
+        Task<List<EPersonaConsulta>> Consultar(EEntradaConsultaPersona entradaConsultaPersona);
+        Task<EPersonaId> Crear(EPersonaCrea personaCrea);
+        Task<bool> Actualizar(EPersonaActualiza personaActualiza);
+        Task<bool> Eliminar(EPersonaElimina personaElimina);
 
     }
 }

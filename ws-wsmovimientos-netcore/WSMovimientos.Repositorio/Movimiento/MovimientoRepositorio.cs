@@ -52,7 +52,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <param name="entradaConsultaMovimiento"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<List<MovimientoConsulta>> Consulta(EntradaConsultaMovimiento entradaConsultaMovimiento)
+        public async Task<List<EMovimientoConsulta>> Consultar(EEntradaConsultaMovimiento entradaConsultaMovimiento)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace WSMovimientos.Repositorio.Movimiento
                     .Where(o => o.Fecha >= (entradaConsultaMovimiento.FechaInicio.IsNull() ? o.Fecha : DateTime.Parse(entradaConsultaMovimiento.FechaInicio)))
                     .Where(o => o.Fecha <= (entradaConsultaMovimiento.FechaFin.IsNull() ? o.Fecha : DateTime.Parse(entradaConsultaMovimiento.FechaFin).AddDays(1)))
                     .ToListAsync();
-                return _mapper.Map<List<MovimientoConsulta>>(bmMovimiento);
+                return _mapper.Map<List<EMovimientoConsulta>>(bmMovimiento);
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <param name="entradaConsultaMovimiento"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<MovimientoConsulta> ConsultaUltimaTransaccion(EntradaConsultaMovimiento entradaConsultaMovimiento)
+        public async Task<EMovimientoConsulta> ConsultarUltimaTransaccion(EEntradaConsultaMovimiento entradaConsultaMovimiento)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace WSMovimientos.Repositorio.Movimiento
                         bmMovimiento = new BmMovimiento() { IdCuentaNavigation = cuenta, Saldo = cuenta.SaldoInicial};
                 }
 
-                return _mapper.Map<MovimientoConsulta>(bmMovimiento);
+                return _mapper.Map<EMovimientoConsulta>(bmMovimiento);
             }
             catch (Exception ex)
             {
@@ -113,7 +113,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <param name="entradaConsultaMovimiento"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<List<MovimientoCuentaConsulta>> ConsultaMovimientosCuenta(EntradaConsultaMovimientoCuenta entradaConsultaMovimiento)
+        public async Task<List<EMovimientoCuentaConsulta>> ConsultarMovimientosCuenta(EEntradaConsultaMovimientoCuenta entradaConsultaMovimiento)
         {
             try
             {
@@ -139,11 +139,11 @@ namespace WSMovimientos.Repositorio.Movimiento
 
 
                 //DANILO: Pendiente validar el Mapero en la clase Mapper
-                List<MovimientoCuentaConsulta> respuesta = new List<MovimientoCuentaConsulta>();
+                List<EMovimientoCuentaConsulta> respuesta = new List<EMovimientoCuentaConsulta>();
                 
                 for (int i = 0; i< consulta.Count; i++)
                 {
-                    respuesta.Add(new MovimientoCuentaConsulta()
+                    respuesta.Add(new EMovimientoCuentaConsulta()
                     {
                         Fecha = consulta[i].Fecha,
                         Cliente = consulta[i].Nombre,
@@ -178,7 +178,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<Entidades.DTOS.Movimiento> Crea(MovimientoCreaCompleto movimientoCrea)
+        public async Task<Entidades.DTOS.EMovimiento> Crear(EMovimientoCreaCompleto movimientoCrea)
         {
             try
             {
@@ -187,7 +187,7 @@ namespace WSMovimientos.Repositorio.Movimiento
                 _iBddContext.Add(bmMovimiento);
                 await _iBddContext.SaveChangesAsync();
 
-                var respuesta = _mapper.Map<Entidades.DTOS.Movimiento>(movimientoCrea);
+                var respuesta = _mapper.Map<Entidades.DTOS.EMovimiento>(movimientoCrea);
                 respuesta.Id = bmMovimiento.IdCuenta;
                 respuesta.Fecha = bmMovimiento.Fecha;
 
@@ -213,7 +213,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<bool> Actualiza(MovimientoActualiza movimientoActualiza)
+        public async Task<bool> Actualizar(EMovimientoActualiza movimientoActualiza)
         {
             try
             {
@@ -245,7 +245,7 @@ namespace WSMovimientos.Repositorio.Movimiento
         /// <param name="movimientoElimina"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<bool> Elimina(MovimientoElimina movimientoElimina)
+        public async Task<bool> Eliminar(EMovimientoElimina movimientoElimina)
         {
             try
             {

@@ -23,10 +23,10 @@ namespace WSMovimientos.Infraestructura.Personas
 
         private readonly IPropiedadesApi _iPropiedadesApi;
         private readonly IPersonaRepositorio _personaRepositorio;
-        private readonly IValidator<EEntrada<EntradaConsultaPersona>> _validatorEntradaConsulta;
-        private readonly IValidator<EEntrada<EntradaCreaPersona>> _validatorEntradaCrea;
-        private readonly IValidator<EEntrada<EntradaActualizaPersona>> _validatorEntradaActualiza;
-        private readonly IValidator<EEntrada<EntradaEliminaPersona>> _validatorEntradaElimina;
+        private readonly IValidator<EEntrada<EEntradaConsultaPersona>> _validatorEntradaConsulta;
+        private readonly IValidator<EEntrada<EEntradaCreaPersona>> _validatorEntradaCrea;
+        private readonly IValidator<EEntrada<EEntradaActualizaPersona>> _validatorEntradaActualiza;
+        private readonly IValidator<EEntrada<EEntradaEliminaPersona>> _validatorEntradaElimina;
 
         #endregion ReadOnly
 
@@ -45,10 +45,10 @@ namespace WSMovimientos.Infraestructura.Personas
             (
             IPropiedadesApi iPropiedadesApi,
             IPersonaRepositorio personaRepositorio,
-            IValidator<EEntrada<EntradaConsultaPersona>> validatorEntradaConsulta,
-            IValidator<EEntrada<EntradaCreaPersona>> validatorEntradaCrea,
-            IValidator<EEntrada<EntradaActualizaPersona>> validatorEntradaActualiza,
-            IValidator<EEntrada<EntradaEliminaPersona>> validatorEntradaElimina
+            IValidator<EEntrada<EEntradaConsultaPersona>> validatorEntradaConsulta,
+            IValidator<EEntrada<EEntradaCreaPersona>> validatorEntradaCrea,
+            IValidator<EEntrada<EEntradaActualizaPersona>> validatorEntradaActualiza,
+            IValidator<EEntrada<EEntradaEliminaPersona>> validatorEntradaElimina
             )
 
         {
@@ -76,9 +76,9 @@ namespace WSMovimientos.Infraestructura.Personas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaConsultaPersonas>> Consulta(EEntrada<EntradaConsultaPersona> entrada)
+        public async Task<ERespuesta<ESalidaConsultaPersonas>> Consultar(EEntrada<EEntradaConsultaPersona> entrada)
         {
-            List<PersonaConsulta> resultadoConsulta = new List<PersonaConsulta>();
+            List<EPersonaConsulta> resultadoConsulta = new List<EPersonaConsulta>();
 
             var result = _validatorEntradaConsulta.Validate(entrada);
             if (!result.IsValid)
@@ -88,16 +88,16 @@ namespace WSMovimientos.Infraestructura.Personas
             }
 
             
-            resultadoConsulta = await _personaRepositorio.Consulta(entrada.BodyIn);
+            resultadoConsulta = await _personaRepositorio.Consultar(entrada.BodyIn);
          
 
             if (resultadoConsulta.IsNull() || resultadoConsulta.Count < 1)
                 throw new CoreNegocioError(EConstantes.ErrorCode4, EConstantes.ErrorCode4Descripcion, this.GetFirstName(), EConstantes.movimientos, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaConsultaPersonas>()
+            return new ERespuesta<ESalidaConsultaPersonas>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaConsultaPersonas()
+                BodyOut = new ESalidaConsultaPersonas()
                 {
                     Personas = resultadoConsulta
                 },
@@ -116,7 +116,7 @@ namespace WSMovimientos.Infraestructura.Personas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaCreaPersona>> CrearAsync(EEntrada<EntradaCreaPersona> entrada)
+        public async Task<ERespuesta<ESalidaCreaPersona>> Crear(EEntrada<EEntradaCreaPersona> entrada)
         {
             var result = _validatorEntradaCrea.Validate(entrada);
             if (!result.IsValid)
@@ -125,14 +125,14 @@ namespace WSMovimientos.Infraestructura.Personas
                 throw new CoreNegocioError(falla.ErrorCode, falla.ErrorMessage, this.GetFirstName(), MethodBase.GetCurrentMethod()?.DeclaringType?.Name, _iPropiedadesApi.BackendOpenShift());
             }
 
-            var resultadoCrea = await _personaRepositorio.CrearAsync(entrada.BodyIn.Persona);
+            var resultadoCrea = await _personaRepositorio.Crear(entrada.BodyIn.Persona);
 
             if (resultadoCrea.IsNull() || resultadoCrea.Id < 1) throw new CoreNegocioError(EConstantes.ErrorCrearCode, EConstantes.ErrorCrearDescripcion, this.GetFirstName(), EConstantes.crear, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaCreaPersona>()
+            return new ERespuesta<ESalidaCreaPersona>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaCreaPersona()
+                BodyOut = new ESalidaCreaPersona()
                 {
                     Persona = resultadoCrea
                 },
@@ -151,7 +151,7 @@ namespace WSMovimientos.Infraestructura.Personas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuestaSimple> ActualizarAsync(EEntrada<EntradaActualizaPersona> entrada)
+        public async Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaPersona> entrada)
         {
             var result = _validatorEntradaActualiza.Validate(entrada);
             if (!result.IsValid)
@@ -161,7 +161,7 @@ namespace WSMovimientos.Infraestructura.Personas
             }
 
 
-            if (!(await _personaRepositorio.ActualizarAsync(entrada.BodyIn.Persona)))
+            if (!(await _personaRepositorio.Actualizar(entrada.BodyIn.Persona)))
                 throw new CoreNegocioError(EConstantes.ErrorActualizarCode, EConstantes.ErrorActualizarDescripcion, this.GetFirstName(), EConstantes.actualizar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()
@@ -183,7 +183,7 @@ namespace WSMovimientos.Infraestructura.Personas
         /// <param name="entrada"></param>
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
-        public async Task<ERespuestaSimple> EliminarAsync(EEntrada<EntradaEliminaPersona> entrada)
+        public async Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaPersona> entrada)
         {
             var result = _validatorEntradaElimina.Validate(entrada);
             if (!result.IsValid)
@@ -193,7 +193,7 @@ namespace WSMovimientos.Infraestructura.Personas
             }
 
 
-            if (!(await _personaRepositorio.EliminarAsync(entrada.BodyIn.Persona)))
+            if (!(await _personaRepositorio.Eliminar(entrada.BodyIn.Persona)))
                 throw new CoreNegocioError(EConstantes.ErrorEliminarCode, EConstantes.ErrorEliminarDescripcion, this.GetFirstName(), EConstantes.eliminar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()

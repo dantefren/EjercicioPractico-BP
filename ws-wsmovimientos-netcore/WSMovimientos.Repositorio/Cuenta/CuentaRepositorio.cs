@@ -51,7 +51,7 @@ namespace WSMovimientos.Repositorio.Cuenta
         /// <param name="entradaConsultaCuenta"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<List<CuentaConsulta>> Consulta(EntradaConsultaCuenta entradaConsultaCuenta)
+        public async Task<List<ECuentaConsulta>> Consultar(EEntradaConsultaCuenta entradaConsultaCuenta)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace WSMovimientos.Repositorio.Cuenta
                     .Where(o => o.IdCuenta == (entradaConsultaCuenta.IdCuenta.IsNull() ? o.IdCuenta : entradaConsultaCuenta.IdCuenta))
                     .Where(o => o.IdPersona == (entradaConsultaCuenta.IdPersona.IsNull() ? o.IdPersona : entradaConsultaCuenta.IdPersona))
                     .ToListAsync();
-                return _mapper.Map<List<CuentaConsulta>>(bmCuenta);
+                return _mapper.Map<List<ECuentaConsulta>>(bmCuenta);
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace WSMovimientos.Repositorio.Cuenta
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<CuentaId> Crea(CuentaCrea cuentaCrea)
+        public async Task<ECuentaId> Crear(ECuentaCrea cuentaCrea)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace WSMovimientos.Repositorio.Cuenta
                 var bmCuenta = _mapper.Map<BmCuentum>(cuentaCrea);
                 _iBddContext.Add(bmCuenta);
                 await _iBddContext.SaveChangesAsync();
-                return new CuentaId
+                return new ECuentaId
                 {
 
                     Id = bmCuenta.IdCuenta
@@ -114,7 +114,7 @@ namespace WSMovimientos.Repositorio.Cuenta
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<bool> Actualiza(CuentaActualiza cuentaActualiza)
+        public async Task<bool> Actualizar(ECuentaActualiza cuentaActualiza)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace WSMovimientos.Repositorio.Cuenta
         /// <param name="cuentaElimina"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<bool> Elimina(CuentaElimina cuentaElimina)
+        public async Task<bool> Eliminar(ECuentaElimina cuentaElimina)
         {
             try
             {

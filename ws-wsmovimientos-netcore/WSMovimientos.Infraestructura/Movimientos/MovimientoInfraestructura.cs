@@ -23,12 +23,12 @@ namespace WSMovimientos.Infraestructura.Movimientos
 
         private readonly IPropiedadesApi _iPropiedadesApi;
         private readonly IMovimientoRepositorio _movimientoRepositorio;
-        private readonly IValidator<EEntrada<EntradaConsultaMovimiento>> _validatorEntradaConsulta;
-        private readonly IValidator<EEntrada<EntradaCreaMovimiento>> _validatorEntradaCrea;
-        private readonly IValidator<EEntrada<EntradaActualizaMovimiento>> _validatorEntradaActualiza;
-        private readonly IValidator<EEntrada<EntradaEliminaMovimiento>> _validatorEntradaElimina;
+        private readonly IValidator<EEntrada<EEntradaConsultaMovimiento>> _validatorEntradaConsulta;
+        private readonly IValidator<EEntrada<EEntradaCreaMovimiento>> _validatorEntradaCrea;
+        private readonly IValidator<EEntrada<EEntradaActualizaMovimiento>> _validatorEntradaActualiza;
+        private readonly IValidator<EEntrada<EEntradaEliminaMovimiento>> _validatorEntradaElimina;
 
-        private readonly IValidator<EEntrada<EntradaConsultaMovimientoCuenta>> _validatorEntradaConsultaMovimiento;
+        private readonly IValidator<EEntrada<EEntradaConsultaMovimientoCuenta>> _validatorEntradaConsultaMovimiento;
 
 
         #endregion ReadOnly
@@ -49,11 +49,11 @@ namespace WSMovimientos.Infraestructura.Movimientos
             IPropiedadesApi iPropiedadesApi,
             IMovimientoRepositorio movimientoRepositorio,
 
-            IValidator<EEntrada<EntradaConsultaMovimiento>> validatorEntradaMovimiento,
-            IValidator<EEntrada<EntradaCreaMovimiento>> validatorEntradaCrea,
-            IValidator<EEntrada<EntradaActualizaMovimiento>> validatorEntradaActualiza,
-            IValidator<EEntrada<EntradaEliminaMovimiento>> validatorEntradaElimina,
-            IValidator<EEntrada<EntradaConsultaMovimientoCuenta>> validatorEntradaMovimientoCuenta
+            IValidator<EEntrada<EEntradaConsultaMovimiento>> validatorEntradaMovimiento,
+            IValidator<EEntrada<EEntradaCreaMovimiento>> validatorEntradaCrea,
+            IValidator<EEntrada<EEntradaActualizaMovimiento>> validatorEntradaActualiza,
+            IValidator<EEntrada<EEntradaEliminaMovimiento>> validatorEntradaElimina,
+            IValidator<EEntrada<EEntradaConsultaMovimientoCuenta>> validatorEntradaMovimientoCuenta
             
 
             )
@@ -82,9 +82,9 @@ namespace WSMovimientos.Infraestructura.Movimientos
             /// <returns></returns>
             /// <exception cref="CoreNegocioError"></exception>
             [Loggable]
-        public async Task<ERespuesta<SalidaConsultaMovimiento>> Consulta(EEntrada<EntradaConsultaMovimiento> entrada)
+        public async Task<ERespuesta<ESalidaConsultaMovimiento>> Consultar(EEntrada<EEntradaConsultaMovimiento> entrada)
         {
-            List<MovimientoConsulta> resultadoConsulta = new List<MovimientoConsulta>();
+            List<EMovimientoConsulta> resultadoConsulta = new List<EMovimientoConsulta>();
 
             var result = _validatorEntradaConsulta.Validate(entrada);
             if (!result.IsValid)
@@ -94,16 +94,16 @@ namespace WSMovimientos.Infraestructura.Movimientos
             }
 
 
-            resultadoConsulta = await _movimientoRepositorio.Consulta(entrada.BodyIn);
+            resultadoConsulta = await _movimientoRepositorio.Consultar(entrada.BodyIn);
 
 
             if (resultadoConsulta.IsNull() || resultadoConsulta.Count < 1)
                 throw new CoreNegocioError(EConstantes.ErrorCode4, EConstantes.ErrorCode4Descripcion, this.GetFirstName(), EConstantes.movimientos, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaConsultaMovimiento>()
+            return new ERespuesta<ESalidaConsultaMovimiento>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaConsultaMovimiento()
+                BodyOut = new ESalidaConsultaMovimiento()
                 {
                     Movimientos = resultadoConsulta
                 },
@@ -118,9 +118,9 @@ namespace WSMovimientos.Infraestructura.Movimientos
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaConsultaMovimientoCuenta>> ConsultaMovimientosCuenta(EEntrada<EntradaConsultaMovimientoCuenta> entrada)
+        public async Task<ERespuesta<ESalidaConsultaMovimientoCuenta>> ConsultarMovimientosCuenta(EEntrada<EEntradaConsultaMovimientoCuenta> entrada)
         {
-            List<MovimientoCuentaConsulta> resultadoConsulta = new List<MovimientoCuentaConsulta>();
+            List<EMovimientoCuentaConsulta> resultadoConsulta = new List<EMovimientoCuentaConsulta>();
 
             var result = _validatorEntradaConsultaMovimiento.Validate(entrada);
             if (!result.IsValid)
@@ -130,16 +130,16 @@ namespace WSMovimientos.Infraestructura.Movimientos
             }
 
 
-            resultadoConsulta = await _movimientoRepositorio.ConsultaMovimientosCuenta(entrada.BodyIn);
+            resultadoConsulta = await _movimientoRepositorio.ConsultarMovimientosCuenta(entrada.BodyIn);
 
 
             if (resultadoConsulta.IsNull() || resultadoConsulta.Count < 1)
                 throw new CoreNegocioError(EConstantes.ErrorCode4, EConstantes.ErrorCode4Descripcion, this.GetFirstName(), EConstantes.movimientos, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaConsultaMovimientoCuenta>()
+            return new ERespuesta<ESalidaConsultaMovimientoCuenta>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaConsultaMovimientoCuenta()
+                BodyOut = new ESalidaConsultaMovimientoCuenta()
                 {
                     Movimientos = resultadoConsulta
                 },
@@ -162,7 +162,7 @@ namespace WSMovimientos.Infraestructura.Movimientos
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaCreaMovimiento>> Crea(EEntrada<EntradaCreaMovimiento> entrada)
+        public async Task<ERespuesta<ESalidaCreaMovimiento>> Crear(EEntrada<EEntradaCreaMovimiento> entrada)
         {
             var result = _validatorEntradaCrea.Validate(entrada);
             if (!result.IsValid)
@@ -175,12 +175,12 @@ namespace WSMovimientos.Infraestructura.Movimientos
             var valorTransaccion = entrada.BodyIn.Movimiento.Valor;
             var tipoTransaccion = entrada.BodyIn.Movimiento.Tipo;
             decimal? saldo = 0;
-            var movimientoCreaCompleto = new MovimientoCreaCompleto();
+            var movimientoCreaCompleto = new EMovimientoCreaCompleto();
 
             #region Consulta Saldo Ultima Tansaccion
-            var entradaConsulta = new EntradaConsultaMovimiento();
+            var entradaConsulta = new EEntradaConsultaMovimiento();
             entradaConsulta.IdCuenta = idCuenta;
-            var untimaTransaccion = await _movimientoRepositorio.ConsultaUltimaTransaccion(entradaConsulta);
+            var untimaTransaccion = await _movimientoRepositorio.ConsultarUltimaTransaccion(entradaConsulta);
 
             if (untimaTransaccion.IsNull())
                 throw new CoreNegocioError(EConstantes.ErrorCuentaCodigo, EConstantes.ErrorCuenta, this.GetFirstName(), EConstantes.crear, _iPropiedadesApi.BackendOpenShift());
@@ -196,20 +196,20 @@ namespace WSMovimientos.Infraestructura.Movimientos
     
             #endregion
 
-                #region Validacion Transaccion
+            #region Validacion Transaccion
             if (movimientoCreaCompleto.Saldo < 0) throw new CoreNegocioError(EConstantes.ErrorSaldoCodigo, EConstantes.ErrorSaldo, this.GetFirstName(), EConstantes.crear, _iPropiedadesApi.BackendOpenShift());
             #endregion
 
 
 
-            var resultadoCrea = await _movimientoRepositorio.Crea(movimientoCreaCompleto);
+            var resultadoCrea = await _movimientoRepositorio.Crear(movimientoCreaCompleto);
 
             if (resultadoCrea.IsNull() || resultadoCrea.Id < 1) throw new CoreNegocioError(EConstantes.ErrorCrearCode, EConstantes.ErrorCrearDescripcion, this.GetFirstName(), EConstantes.crear, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaCreaMovimiento>()
+            return new ERespuesta<ESalidaCreaMovimiento>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaCreaMovimiento()
+                BodyOut = new ESalidaCreaMovimiento()
                 {
                     Movimiento = resultadoCrea
                 },
@@ -228,7 +228,7 @@ namespace WSMovimientos.Infraestructura.Movimientos
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuestaSimple> Actualiza(EEntrada<EntradaActualizaMovimiento> entrada)
+        public async Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaMovimiento> entrada)
         {
             var result = _validatorEntradaActualiza.Validate(entrada);
             if (!result.IsValid)
@@ -238,7 +238,7 @@ namespace WSMovimientos.Infraestructura.Movimientos
             }
 
 
-            if (!(await _movimientoRepositorio.Actualiza(entrada.BodyIn.Movimiento)))
+            if (!(await _movimientoRepositorio.Actualizar(entrada.BodyIn.Movimiento)))
                 throw new CoreNegocioError(EConstantes.ErrorActualizarCode, EConstantes.ErrorActualizarDescripcion, this.GetFirstName(), EConstantes.actualizar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()
@@ -260,7 +260,7 @@ namespace WSMovimientos.Infraestructura.Movimientos
         /// <param name="entrada"></param>
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
-        public async Task<ERespuestaSimple> Elimina(EEntrada<EntradaEliminaMovimiento> entrada)
+        public async Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaMovimiento> entrada)
         {
             var result = _validatorEntradaElimina.Validate(entrada);
             if (!result.IsValid)
@@ -270,7 +270,7 @@ namespace WSMovimientos.Infraestructura.Movimientos
             }
 
 
-            if (!(await _movimientoRepositorio.Elimina(entrada.BodyIn.Movimiento)))
+            if (!(await _movimientoRepositorio.Eliminar(entrada.BodyIn.Movimiento)))
                 throw new CoreNegocioError(EConstantes.ErrorEliminarCode, EConstantes.ErrorEliminarDescripcion, this.GetFirstName(), EConstantes.eliminar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()

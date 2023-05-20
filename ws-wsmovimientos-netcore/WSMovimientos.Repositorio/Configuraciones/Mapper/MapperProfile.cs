@@ -13,7 +13,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
         public MapperProfile()
         {
             #region Persona
-            CreateMap<BmPersona, PersonaConsulta>()
+            CreateMap<BmPersona, EPersonaConsulta>()
                 .ForMember(dest => dest.Id, orig => orig.MapFrom(src => src.IdPersona))
                 .ForMember(dest => dest.Nombre, orig => orig.MapFrom(src => src.Nombre))
                 .ForMember(dest => dest.Genero, orig => orig.MapFrom(src => src.Genero))
@@ -23,23 +23,23 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
                 .ForMember(dest => dest.Telefono, orig => orig.MapFrom(src => src.Telefono));
 
 
-            CreateMap<PersonaCrea, BmPersona>()
+            CreateMap<EPersonaCrea, BmPersona>()
                     .ForMember(dest => dest.Identificacion, orig => orig.MapFrom(src => src.Identificacion));
             #endregion
 
             #region Cliente
-            CreateMap<BmCliente, ClienteConsulta>()
+            CreateMap<BmCliente, EClienteConsulta>()
                 .ForMember(dest => dest.Id, orig => orig.MapFrom(src => src.IdCliente))
                 .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                 .ForMember(dest => dest.Persona, orig => orig.MapFrom(src => src.IdPersonaNavigation))
                 .ForMember(dest => dest.Contrasenia, orig => orig.MapFrom(src => src.Contrasenia))
                 .ForMember(dest => dest.Estado, orig => orig.MapFrom(src => src.Estado));
 
-            CreateMap<ClienteCrea, BmCliente > ()
+            CreateMap<EClienteCrea, BmCliente > ()
                      .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                      .ForMember(dest => dest.Contrasenia, orig => orig.MapFrom(src => src.Contrasenia));
 
-            CreateMap<BmCliente, ClienteCrea>()
+            CreateMap<BmCliente, EClienteCrea>()
                      .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                      .ForMember(dest => dest.Contrasenia, orig => orig.MapFrom(src => src.Contrasenia));
 
@@ -47,7 +47,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
             #endregion
 
             #region Cuenta
-            CreateMap<BmCuentum, CuentaConsulta>()
+            CreateMap<BmCuentum, ECuentaConsulta>()
                 .ForMember(dest => dest.Id, orig => orig.MapFrom(src => src.IdCuenta))
                 .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                 .ForMember(dest => dest.Persona, orig => orig.MapFrom(src => src.IdPersonaNavigation))
@@ -56,13 +56,13 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
                 .ForMember(dest => dest.SaldoInicial, orig => orig.MapFrom(src => src.SaldoInicial))
                 .ForMember(dest => dest.Estado, orig => orig.MapFrom(src => src.Estado));
 
-            CreateMap<CuentaCrea, BmCuentum>()
+            CreateMap<ECuentaCrea, BmCuentum>()
                      .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                      .ForMember(dest => dest.NumeroCuenta, orig => orig.MapFrom(src => src.NumeroCuenta))
                      .ForMember(dest => dest.TipoCuenta, orig => orig.MapFrom(src => src.TipoCuenta))
                      .ForMember(dest => dest.SaldoInicial, orig => orig.MapFrom(src => src.SaldoInicial));
 
-            CreateMap<BmCuentum, CuentaCrea>()
+            CreateMap<BmCuentum, ECuentaCrea>()
                      .ForMember(dest => dest.IdPersona, orig => orig.MapFrom(src => src.IdPersona))
                      .ForMember(dest => dest.NumeroCuenta, orig => orig.MapFrom(src => src.NumeroCuenta))
                      .ForMember(dest => dest.TipoCuenta, orig => orig.MapFrom(src => src.TipoCuenta))
@@ -71,7 +71,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
             #endregion
 
             #region Movimiento
-            CreateMap<BmMovimiento, MovimientoConsulta>()
+            CreateMap<BmMovimiento, EMovimientoConsulta>()
                 .ForMember(dest => dest.Id, orig => orig.MapFrom(src => src.IdMovimientos))
                 .ForMember(dest => dest.IdCuenta, orig => orig.MapFrom(src => src.IdCuenta))
                 .ForMember(dest => dest.Cuenta, orig => orig.MapFrom(src => src.IdCuentaNavigation))
@@ -80,37 +80,37 @@ namespace WSMovimientos.Repositorio.Configuraciones.Mapper
                 .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor))
                 .ForMember(dest => dest.Saldo, orig => orig.MapFrom(src => src.Saldo));
 
-            CreateMap<MovimientoCrea, BmMovimiento>()
+            CreateMap<EMovimientoCrea, BmMovimiento>()
                      .ForMember(dest => dest.IdCuenta, orig => orig.MapFrom(src => src.IdCuenta))
                      .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                      .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor));
 
   
-            CreateMap<BmMovimiento, MovimientoCrea>()
+            CreateMap<BmMovimiento, EMovimientoCrea>()
                      .ForMember(dest => dest.IdCuenta, orig => orig.MapFrom(src => src.IdCuenta))
                      .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                      .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor));
 
-            CreateMap<MovimientoCreaCompleto, BmMovimiento>()
+            CreateMap<EMovimientoCreaCompleto, BmMovimiento>()
                      .ForMember(dest => dest.IdCuenta, orig => orig.MapFrom(src => src.IdCuenta))
                      .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                      .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor))
                      .ForMember(dest => dest.Saldo, orig => orig.MapFrom(src => src.Saldo));
 
 
-            CreateMap<BmMovimiento, MovimientoCreaCompleto>()
+            CreateMap<BmMovimiento, EMovimientoCreaCompleto>()
                      .ForMember(dest => dest.IdCuenta, orig => orig.MapFrom(src => src.IdCuenta))
                      .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                      .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor))
                      .ForMember(dest => dest.Saldo, orig => orig.MapFrom(src => src.Saldo));
 
 
-            CreateMap<MovimientoCreaCompleto, Entidades.DTOS.Movimiento>()
+            CreateMap<EMovimientoCreaCompleto, Entidades.DTOS.EMovimiento>()
                 .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                 .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor))
                 .ForMember(dest => dest.Saldo, orig => orig.MapFrom(src => src.Saldo));
 
-            CreateMap<Entidades.DTOS.Movimiento, MovimientoCreaCompleto>()
+            CreateMap<Entidades.DTOS.EMovimiento, EMovimientoCreaCompleto>()
                 .ForMember(dest => dest.Tipo, orig => orig.MapFrom(src => src.Tipo))
                 .ForMember(dest => dest.Valor, orig => orig.MapFrom(src => src.Valor))
                 .ForMember(dest => dest.Saldo, orig => orig.MapFrom(src => src.Saldo));

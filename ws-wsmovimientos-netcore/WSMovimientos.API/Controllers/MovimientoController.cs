@@ -64,15 +64,15 @@ namespace WSMovimientos.API.Controllers
         /// <param name="eEntradaConsultaMovimiento"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route(EConstantes.consulta)]
+        [Route(EConstantes.consultar)]
         [Loggable]
-        public async Task<ActionResult> Consulta(EEntrada<EntradaConsultaMovimiento> eEntradaConsultaMovimiento)
+        public async Task<ActionResult> Consultar(EEntrada<EEntradaConsultaMovimiento> eEntradaConsultaMovimiento)
         {
             var salidaError = new ERespuestaSimple(eEntradaConsultaMovimiento?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _cuentasInfraestructura.Consulta(eEntradaConsultaMovimiento));
+                return Ok(await _cuentasInfraestructura.Consultar(eEntradaConsultaMovimiento));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -103,13 +103,13 @@ namespace WSMovimientos.API.Controllers
         [HttpGet]
         [Route(EConstantes.consultaMovimientos)]
         [Loggable]
-        public async Task<ActionResult> ConsultaMovimientosCuenta(EEntrada<EntradaConsultaMovimientoCuenta> eEntradaConsultaMovimientoCuenta)
+        public async Task<ActionResult> ConsultarMovimientosCuenta(EEntrada<EEntradaConsultaMovimientoCuenta> eEntradaConsultaMovimientoCuenta)
         {
             var salidaError = new ERespuestaSimple(eEntradaConsultaMovimientoCuenta?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _cuentasInfraestructura.ConsultaMovimientosCuenta(eEntradaConsultaMovimientoCuenta));
+                return Ok(await _cuentasInfraestructura.ConsultarMovimientosCuenta(eEntradaConsultaMovimientoCuenta));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -141,13 +141,13 @@ namespace WSMovimientos.API.Controllers
         [HttpPut]
         [Route(EConstantes.crear)]
         [Loggable]
-        public async Task<ActionResult> Crear(EEntrada<EntradaCreaMovimiento> entradaCreaMovimiento)
+        public async Task<ActionResult> Crear(EEntrada<EEntradaCreaMovimiento> entradaCreaMovimiento)
         {
             var salidaError = new ERespuestaSimple(entradaCreaMovimiento?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _cuentasInfraestructura.Crea(entradaCreaMovimiento));
+                return Ok(await _cuentasInfraestructura.Crear(entradaCreaMovimiento));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -179,13 +179,13 @@ namespace WSMovimientos.API.Controllers
         //[Route(EConstantes.Recurso003)]
         [Route(EConstantes.actualizar)]
         [Loggable]
-        public async Task<ActionResult> Actualiza(EEntrada<EntradaActualizaMovimiento> entradaActualizaMovimiento)
+        public async Task<ActionResult> Actualizar(EEntrada<EEntradaActualizaMovimiento> entradaActualizaMovimiento)
         {
             var salidaError = new ERespuestaSimple(entradaActualizaMovimiento?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _cuentasInfraestructura.Actualiza(entradaActualizaMovimiento));
+                return Ok(await _cuentasInfraestructura.Actualizar(entradaActualizaMovimiento));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -217,13 +217,13 @@ namespace WSMovimientos.API.Controllers
         [HttpDelete]
         [Route(EConstantes.eliminar)]
         [Loggable]
-        public async Task<ActionResult> Elimina(EEntrada<EntradaEliminaMovimiento> entradaEliminaMovimiento)
+        public async Task<ActionResult> Eliminar(EEntrada<EEntradaEliminaMovimiento> entradaEliminaMovimiento)
         {
             var salidaError = new ERespuestaSimple(entradaEliminaMovimiento?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _cuentasInfraestructura.Elimina(entradaEliminaMovimiento));
+                return Ok(await _cuentasInfraestructura.Eliminar(entradaEliminaMovimiento));
 
             }
             catch (CoreNegocioError coreNegocioError)

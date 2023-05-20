@@ -42,27 +42,27 @@ builder.Services.AddTransient<ICuentaRepositorio, CuentaRepositorio>();
 builder.Services.AddTransient<IMovimientoRepositorio, MovimientoRepositorio>();
 
 builder.Services.AddDbContext<BddContext>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaConsultaPersona>>, ValidaEntradaConsultaPersona>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaCreaPersona>>, ValidaEntradaCreaPersona>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaActualizaPersona>>, ValidaEntradaActualizaPersona>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaEliminaPersona>>, ValidaEntradaEliminaPersona>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaConsultaPersona>>, ValidaEntradaConsultaPersona>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaCreaPersona>>, ValidaEntradaCreaPersona>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaActualizaPersona>>, ValidaEntradaActualizaPersona>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaEliminaPersona>>, ValidaEntradaEliminaPersona>();
 
-builder.Services.AddScoped<IValidator<EEntrada<EntradaConsultaCliente>>, ValidaEntradaConsultaCliente>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaCreaCliente>>, ValidaEntradaCreaCliente>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaActualizaCliente>>, ValidaEntradaActualizaCliente>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaEliminaCliente>>, ValidaEntradaEliminaCliente>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaConsultaCliente>>, ValidaEntradaConsultaCliente>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaCreaCliente>>, ValidaEntradaCreaCliente>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaActualizaCliente>>, ValidaEntradaActualizaCliente>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaEliminaCliente>>, ValidaEntradaEliminaCliente>();
 
-builder.Services.AddScoped<IValidator<EEntrada<EntradaConsultaCuenta>>, ValidaEntradaConsultaCuenta>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaCreaCuenta>>, ValidaEntradaCreaCuenta>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaActualizaCuenta>>, ValidaEntradaActualizaCuenta>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaEliminaCuenta>>, ValidaEntradaEliminaCuenta>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaConsultaCuenta>>, ValidaEntradaConsultaCuenta>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaCreaCuenta>>, ValidaEntradaCreaCuenta>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaActualizaCuenta>>, ValidaEntradaActualizaCuenta>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaEliminaCuenta>>, ValidaEntradaEliminaCuenta>();
 
-builder.Services.AddScoped<IValidator<EEntrada<EntradaConsultaMovimiento>>, ValidaEntradaConsultaMovimiento>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaCreaMovimiento>>, ValidaEntradaCreaMovimiento>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaActualizaMovimiento>>, ValidaEntradaActualizaMovimiento>();
-builder.Services.AddScoped<IValidator<EEntrada<EntradaEliminaMovimiento>>, ValidaEntradaEliminaMovimiento>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaConsultaMovimiento>>, ValidaEntradaConsultaMovimiento>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaCreaMovimiento>>, ValidaEntradaCreaMovimiento>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaActualizaMovimiento>>, ValidaEntradaActualizaMovimiento>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaEliminaMovimiento>>, ValidaEntradaEliminaMovimiento>();
 
-builder.Services.AddScoped<IValidator<EEntrada<EntradaConsultaMovimientoCuenta>>, ValidaEntradaConsultaMovimientoCuenta>();
+builder.Services.AddScoped<IValidator<EEntrada<EEntradaConsultaMovimientoCuenta>>, ValidaEntradaConsultaMovimientoCuenta>();
 #endregion REPOSITORIOS
 
 #region INFRAESTRUCTURA

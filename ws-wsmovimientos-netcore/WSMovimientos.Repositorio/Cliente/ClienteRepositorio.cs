@@ -51,7 +51,7 @@ namespace WSMovimientos.Repositorio.Cliente
         /// <param name="entradaConsultaCliente"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<List<ClienteConsulta>> Consulta(EntradaConsultaCliente entradaConsultaCliente)
+        public async Task<List<EClienteConsulta>> Consultar(EEntradaConsultaCliente entradaConsultaCliente)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace WSMovimientos.Repositorio.Cliente
                     .Where(o => o.IdCliente == (entradaConsultaCliente.IdCliente.IsNull() ? o.IdCliente : entradaConsultaCliente.IdCliente))
                     .Where(o => o.IdPersona == (entradaConsultaCliente.IdPersona.IsNull() ? o.IdPersona : entradaConsultaCliente.IdPersona))
                     .ToListAsync();
-                return _mapper.Map<List<ClienteConsulta>>(bmCliente);
+                return _mapper.Map<List<EClienteConsulta>>(bmCliente);
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace WSMovimientos.Repositorio.Cliente
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<ClienteId> Crea(ClienteCrea clienteCrea)
+        public async Task<EClienteId> Crear(EClienteCrea clienteCrea)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace WSMovimientos.Repositorio.Cliente
                 var bmCliente = _mapper.Map<BmCliente>(clienteCrea);
                 _iBddContext.Add(bmCliente);
                 await _iBddContext.SaveChangesAsync();
-                return new ClienteId
+                return new EClienteId
                 {
 
                     Id = bmCliente.IdCliente
@@ -113,7 +113,7 @@ namespace WSMovimientos.Repositorio.Cliente
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<bool> Actualiza(ClienteActualiza clienteActualiza)
+        public async Task<bool> Actualizar(EClienteActualiza clienteActualiza)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace WSMovimientos.Repositorio.Cliente
         /// <param name="clienteElimina"></param>
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
-        public async Task<bool> Elimina(ClienteElimina clienteElimina)
+        public async Task<bool> Eliminar(EClienteElimina clienteElimina)
         {
             try
             {

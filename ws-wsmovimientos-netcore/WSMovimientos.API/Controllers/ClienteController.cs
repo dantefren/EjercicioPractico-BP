@@ -64,15 +64,15 @@ namespace WSMovimientos.API.Controllers
         /// <param name="eEntradaConsultaCliente"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route(EConstantes.consulta)]
+        [Route(EConstantes.consultar)]
         [Loggable]
-        public async Task<ActionResult> Consulta(EEntrada<EntradaConsultaCliente> eEntradaConsultaCliente)
+        public async Task<ActionResult> Consultar(EEntrada<EEntradaConsultaCliente> eEntradaConsultaCliente)
         {
             var salidaError = new ERespuestaSimple(eEntradaConsultaCliente?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _clientesInfraestructura.Consulta(eEntradaConsultaCliente));
+                return Ok(await _clientesInfraestructura.Consultar(eEntradaConsultaCliente));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -104,13 +104,13 @@ namespace WSMovimientos.API.Controllers
         [HttpPut]
         [Route(EConstantes.crear)]
         [Loggable]
-        public async Task<ActionResult> Crear(EEntrada<EntradaCreaCliente> entradaCreaCliente)
+        public async Task<ActionResult> Crear(EEntrada<EEntradaCreaCliente> entradaCreaCliente)
         {
             var salidaError = new ERespuestaSimple(entradaCreaCliente?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _clientesInfraestructura.Crea(entradaCreaCliente));
+                return Ok(await _clientesInfraestructura.Crear(entradaCreaCliente));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -142,13 +142,13 @@ namespace WSMovimientos.API.Controllers
         //[Route(EConstantes.Recurso003)]
         [Route(EConstantes.actualizar)]
         [Loggable]
-        public async Task<ActionResult> Actualiza(EEntrada<EntradaActualizaCliente> entradaActualizaCliente)
+        public async Task<ActionResult> Actualizar(EEntrada<EEntradaActualizaCliente> entradaActualizaCliente)
         {
             var salidaError = new ERespuestaSimple(entradaActualizaCliente?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _clientesInfraestructura.Actualiza(entradaActualizaCliente));
+                return Ok(await _clientesInfraestructura.Actualizar(entradaActualizaCliente));
 
             }
             catch (CoreNegocioError coreNegocioError)
@@ -180,13 +180,13 @@ namespace WSMovimientos.API.Controllers
         [HttpDelete]
         [Route(EConstantes.eliminar)]
         [Loggable]
-        public async Task<ActionResult> Elimina(EEntrada<EntradaEliminaCliente> entradaEliminaCliente)
+        public async Task<ActionResult> Eliminar(EEntrada<EEntradaEliminaCliente> entradaEliminaCliente)
         {
             var salidaError = new ERespuestaSimple(entradaEliminaCliente?.HeaderIn, new EError());
 
             try
             {
-                return Ok(await _clientesInfraestructura.Elimina(entradaEliminaCliente));
+                return Ok(await _clientesInfraestructura.Eliminar(entradaEliminaCliente));
 
             }
             catch (CoreNegocioError coreNegocioError)

@@ -15,35 +15,35 @@ namespace WSMovimientos.Dominio.Movimientos
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaConsultaMovimiento>> Consulta(EEntrada<EntradaConsultaMovimiento> entrada);
+        Task<ERespuesta<ESalidaConsultaMovimiento>> Consultar(EEntrada<EEntradaConsultaMovimiento> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaConsultaMovimientoCuenta>> ConsultaMovimientosCuenta(EEntrada<EntradaConsultaMovimientoCuenta> entrada);
+        Task<ERespuesta<ESalidaConsultaMovimientoCuenta>> ConsultarMovimientosCuenta(EEntrada<EEntradaConsultaMovimientoCuenta> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaCreaMovimiento>> Crea(EEntrada<EntradaCreaMovimiento> entrada);
+        Task<ERespuesta<ESalidaCreaMovimiento>> Crear(EEntrada<EEntradaCreaMovimiento> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> Actualiza(EEntrada<EntradaActualizaMovimiento> entrada);
+        Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaMovimiento> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> Elimina(EEntrada<EntradaEliminaMovimiento> entrada);
+        Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaMovimiento> entrada);
 
     }
 }

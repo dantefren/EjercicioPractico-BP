@@ -23,10 +23,10 @@ namespace WSMovimientos.Infraestructura.Cuentas
 
         private readonly IPropiedadesApi _iPropiedadesApi;
         private readonly ICuentaRepositorio _cuentaRepositorio;
-        private readonly IValidator<EEntrada<EntradaConsultaCuenta>> _validatorEntradaConsulta;
-        private readonly IValidator<EEntrada<EntradaCreaCuenta>> _validatorEntradaCrea;
-        private readonly IValidator<EEntrada<EntradaActualizaCuenta>> _validatorEntradaActualiza;
-        private readonly IValidator<EEntrada<EntradaEliminaCuenta>> _validatorEntradaElimina;
+        private readonly IValidator<EEntrada<EEntradaConsultaCuenta>> _validatorEntradaConsulta;
+        private readonly IValidator<EEntrada<EEntradaCreaCuenta>> _validatorEntradaCrea;
+        private readonly IValidator<EEntrada<EEntradaActualizaCuenta>> _validatorEntradaActualiza;
+        private readonly IValidator<EEntrada<EEntradaEliminaCuenta>> _validatorEntradaElimina;
 
         #endregion ReadOnly
 
@@ -45,10 +45,10 @@ namespace WSMovimientos.Infraestructura.Cuentas
             (
             IPropiedadesApi iPropiedadesApi,
             ICuentaRepositorio cuentaRepositorio,
-            IValidator<EEntrada<EntradaConsultaCuenta>> validatorEntradaConsulta,
-            IValidator<EEntrada<EntradaCreaCuenta>> validatorEntradaCrea,
-            IValidator<EEntrada<EntradaActualizaCuenta>> validatorEntradaActualiza,
-            IValidator<EEntrada<EntradaEliminaCuenta>> validatorEntradaElimina
+            IValidator<EEntrada<EEntradaConsultaCuenta>> validatorEntradaConsulta,
+            IValidator<EEntrada<EEntradaCreaCuenta>> validatorEntradaCrea,
+            IValidator<EEntrada<EEntradaActualizaCuenta>> validatorEntradaActualiza,
+            IValidator<EEntrada<EEntradaEliminaCuenta>> validatorEntradaElimina
             )
 
         {
@@ -74,9 +74,9 @@ namespace WSMovimientos.Infraestructura.Cuentas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaConsultaCuenta>> Consulta(EEntrada<EntradaConsultaCuenta> entrada)
+        public async Task<ERespuesta<ESalidaConsultaCuenta>> Consultar(EEntrada<EEntradaConsultaCuenta> entrada)
         {
-            List<CuentaConsulta> resultadoConsulta = new List<CuentaConsulta>();
+            List<ECuentaConsulta> resultadoConsulta = new List<ECuentaConsulta>();
 
             var result = _validatorEntradaConsulta.Validate(entrada);
             if (!result.IsValid)
@@ -86,16 +86,16 @@ namespace WSMovimientos.Infraestructura.Cuentas
             }
 
 
-            resultadoConsulta = await _cuentaRepositorio.Consulta(entrada.BodyIn);
+            resultadoConsulta = await _cuentaRepositorio.Consultar(entrada.BodyIn);
 
 
             if (resultadoConsulta.IsNull() || resultadoConsulta.Count < 1)
                 throw new CoreNegocioError(EConstantes.ErrorCode4, EConstantes.ErrorCode4Descripcion, this.GetFirstName(), EConstantes.movimientos, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaConsultaCuenta>()
+            return new ERespuesta<ESalidaConsultaCuenta>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaConsultaCuenta()
+                BodyOut = new ESalidaConsultaCuenta()
                 {
                     Cuentas = resultadoConsulta
                 },
@@ -114,7 +114,7 @@ namespace WSMovimientos.Infraestructura.Cuentas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuesta<SalidaCreaCuenta>> Crea(EEntrada<EntradaCreaCuenta> entrada)
+        public async Task<ERespuesta<ESalidaCreaCuenta>> Crear(EEntrada<EEntradaCreaCuenta> entrada)
         {
             var result = _validatorEntradaCrea.Validate(entrada);
             if (!result.IsValid)
@@ -123,14 +123,14 @@ namespace WSMovimientos.Infraestructura.Cuentas
                 throw new CoreNegocioError(falla.ErrorCode, falla.ErrorMessage, this.GetFirstName(), MethodBase.GetCurrentMethod()?.DeclaringType?.Name, _iPropiedadesApi.BackendOpenShift());
             }
 
-            var resultadoCrea = await _cuentaRepositorio.Crea(entrada.BodyIn.Cuenta);
+            var resultadoCrea = await _cuentaRepositorio.Crear(entrada.BodyIn.Cuenta);
 
             if (resultadoCrea.IsNull() || resultadoCrea.Id < 1) throw new CoreNegocioError(EConstantes.ErrorCrearCode, EConstantes.ErrorCrearDescripcion, this.GetFirstName(), EConstantes.crear, _iPropiedadesApi.BackendOpenShift());
 
-            return new ERespuesta<SalidaCreaCuenta>()
+            return new ERespuesta<ESalidaCreaCuenta>()
             {
                 HeaderOut = entrada.HeaderIn,
-                BodyOut = new SalidaCreaCuenta()
+                BodyOut = new ESalidaCreaCuenta()
                 {
                     Cuenta = resultadoCrea
                 },
@@ -149,7 +149,7 @@ namespace WSMovimientos.Infraestructura.Cuentas
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
         [Loggable]
-        public async Task<ERespuestaSimple> Actualiza(EEntrada<EntradaActualizaCuenta> entrada)
+        public async Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaCuenta> entrada)
         {
             var result = _validatorEntradaActualiza.Validate(entrada);
             if (!result.IsValid)
@@ -159,7 +159,7 @@ namespace WSMovimientos.Infraestructura.Cuentas
             }
 
 
-            if (!(await _cuentaRepositorio.Actualiza(entrada.BodyIn.Cuenta)))
+            if (!(await _cuentaRepositorio.Actualizar(entrada.BodyIn.Cuenta)))
                 throw new CoreNegocioError(EConstantes.ErrorActualizarCode, EConstantes.ErrorActualizarDescripcion, this.GetFirstName(), EConstantes.actualizar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()
@@ -181,7 +181,7 @@ namespace WSMovimientos.Infraestructura.Cuentas
         /// <param name="entrada"></param>
         /// <returns></returns>
         /// <exception cref="CoreNegocioError"></exception>
-        public async Task<ERespuestaSimple> Elimina(EEntrada<EntradaEliminaCuenta> entrada)
+        public async Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaCuenta> entrada)
         {
             var result = _validatorEntradaElimina.Validate(entrada);
             if (!result.IsValid)
@@ -191,7 +191,7 @@ namespace WSMovimientos.Infraestructura.Cuentas
             }
 
 
-            if (!(await _cuentaRepositorio.Elimina(entrada.BodyIn.Cuenta)))
+            if (!(await _cuentaRepositorio.Eliminar(entrada.BodyIn.Cuenta)))
                 throw new CoreNegocioError(EConstantes.ErrorEliminarCode, EConstantes.ErrorEliminarDescripcion, this.GetFirstName(), EConstantes.eliminar, _iPropiedadesApi.BackendOpenShift());
 
             return new ERespuestaSimple()

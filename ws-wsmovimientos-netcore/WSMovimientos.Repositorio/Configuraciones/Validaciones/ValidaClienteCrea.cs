@@ -9,7 +9,7 @@ using WSMovimientos.Entidades.DTOS;
 
 namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
 {
-    public class ValidaClienteCrea : AbstractValidator<ClienteCrea>
+    public class ValidaClienteCrea : AbstractValidator<EClienteCrea>
     {
         public ValidaClienteCrea()
         {

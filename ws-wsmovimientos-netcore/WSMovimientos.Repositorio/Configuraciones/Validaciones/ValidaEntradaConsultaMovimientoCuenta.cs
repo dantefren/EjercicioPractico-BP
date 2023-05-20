@@ -13,7 +13,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
     /// <summary>
     /// 
     /// </summary>
-    public class ValidaEntradaConsultaMovimientoCuenta : AbstractValidator<EEntrada<EntradaConsultaMovimientoCuenta>>
+    public class ValidaEntradaConsultaMovimientoCuenta : AbstractValidator<EEntrada<EEntradaConsultaMovimientoCuenta>>
     {
         /// <summary>
         /// 

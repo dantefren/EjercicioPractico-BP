@@ -60,13 +60,13 @@ namespace WSMovimientos.Repositorio.Persona
         /// <param name="entradaConsultaPersona"></param>
         /// <returns></returns>
         [Loggable]
-        public async Task<List<PersonaConsulta>> Consulta(EntradaConsultaPersona entradaConsultaPersona)
+        public async Task<List<EPersonaConsulta>> Consultar(EEntradaConsultaPersona entradaConsultaPersona)
         {
             try
             {
                 var resultado = await _iBddContext.BmPersonas
                .Where(o => o.Identificacion == entradaConsultaPersona.Identificacion).ToListAsync();
-                return _mapper.Map<List<PersonaConsulta>>(resultado);
+                return _mapper.Map<List<EPersonaConsulta>>(resultado);
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace WSMovimientos.Repositorio.Persona
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<PersonaId> CrearAsync(PersonaCrea personaCrea)
+        public async Task<EPersonaId> Crear(EPersonaCrea personaCrea)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace WSMovimientos.Repositorio.Persona
                 var bmPersona = _mapper.Map<BmPersona>(personaCrea);
                 await _iBddContext.BmPersonas.AddAsync(bmPersona);
                 await _iBddContext.SaveChangesAsync();
-                return new PersonaId
+                return new EPersonaId
                 {
 
                     Id = bmPersona.IdPersona
@@ -122,7 +122,7 @@ namespace WSMovimientos.Repositorio.Persona
         /// <returns></returns>
         /// <exception cref="CoreExcepcion"></exception>
         [Loggable]
-        public async Task<bool> ActualizarAsync(PersonaActualiza personaActualiza)
+        public async Task<bool> Actualizar(EPersonaActualiza personaActualiza)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace WSMovimientos.Repositorio.Persona
         #endregion Actualiza 
 
         #region Elimina
-        public async Task<bool> EliminarAsync(PersonaElimina personaElimina)
+        public async Task<bool> Eliminar(EPersonaElimina personaElimina)
         {
             try
             {

@@ -306,7 +306,7 @@
         /// <summary>
         /// 
         /// </summary>
-        public const string consulta = "consulta";
+        public const string consultar = "consultar";
         /// <summary>
         /// 
         /// </summary>
@@ -323,7 +323,7 @@
         /// <summary>
         /// 
         /// </summary>
-        public const string consultaMovimientos = "consulta.movimientos";
+        public const string consultaMovimientos = "consultar.movimientos";
 
         /// <summary>
         /// 

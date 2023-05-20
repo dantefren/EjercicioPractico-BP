@@ -8,7 +8,7 @@ using WSMovimientos.Entidades;
 
 namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
 {
-    public class ValidaPersonaCrea : AbstractValidator<Entidades.DTOS.PersonaCrea>
+    public class ValidaPersonaCrea : AbstractValidator<Entidades.DTOS.EPersonaCrea>
     {
         public ValidaPersonaCrea()
         {

@@ -9,7 +9,7 @@ using WSMovimientos.Entidades.DTOS;
 
 namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
 {
-    public class ValidaPersonaActualiza : AbstractValidator<PersonaActualiza>
+    public class ValidaPersonaActualiza : AbstractValidator<EPersonaActualiza>
     {
         public ValidaPersonaActualiza()
         {

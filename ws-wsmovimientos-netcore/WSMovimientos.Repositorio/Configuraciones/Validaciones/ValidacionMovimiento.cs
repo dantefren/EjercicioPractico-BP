@@ -12,7 +12,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
     /// <summary>
     /// 
     /// </summary>
-    public class ValidacionMovimiento : AbstractValidator<Entidades.DTOS.Movimiento>
+    public class ValidacionMovimiento : AbstractValidator<Entidades.DTOS.EMovimiento>
     {
         /// <summary>
         /// 

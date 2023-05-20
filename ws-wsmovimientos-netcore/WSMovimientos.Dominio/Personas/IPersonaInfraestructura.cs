@@ -15,27 +15,27 @@ namespace WSMovimientos.Dominio.Personas
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaConsultaPersonas>> Consulta(EEntrada<EntradaConsultaPersona> entrada);
+        Task<ERespuesta<ESalidaConsultaPersonas>> Consultar(EEntrada<EEntradaConsultaPersona> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuesta<SalidaCreaPersona>> CrearAsync(EEntrada<EntradaCreaPersona> entrada);
+        Task<ERespuesta<ESalidaCreaPersona>> Crear(EEntrada<EEntradaCreaPersona> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> ActualizarAsync(EEntrada<EntradaActualizaPersona> entrada);
+        Task<ERespuestaSimple> Actualizar(EEntrada<EEntradaActualizaPersona> entrada);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entrada"></param>
         /// <returns></returns>
-        Task<ERespuestaSimple> EliminarAsync(EEntrada<EntradaEliminaPersona> entrada);
+        Task<ERespuestaSimple> Eliminar(EEntrada<EEntradaEliminaPersona> entrada);
     }
 }

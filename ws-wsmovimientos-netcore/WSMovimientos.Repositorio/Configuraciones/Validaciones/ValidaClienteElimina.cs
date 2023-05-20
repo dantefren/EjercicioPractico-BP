@@ -12,7 +12,7 @@ namespace WSMovimientos.Repositorio.Configuraciones.Validaciones
     /// <summary>
     /// 
     /// </summary>
-    public class ValidaClienteElimina : AbstractValidator<ClienteElimina>
+    public class ValidaClienteElimina : AbstractValidator<EClienteElimina>
     {
         /// <summary>
         /// 
